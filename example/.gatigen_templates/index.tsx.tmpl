@@ -1,0 +1,22 @@
+{{define "indexTSX" -}}
+import * as React from 'react'
+{{- range . }}
+import {{.ComponentName}} from './{{.ComponentName}}'
+{{- end }}
+
+type Props = {
+  filename: string
+}
+
+export default (props: Props) => {
+  const { filename } = props
+  switch (filename) {
+    {{- range . }}
+    case "{{.Filename}}":
+      return <{{.ComponentName}} />
+    {{- end }}
+    default:
+      throw "AAAAAAAAAAAAAAAAAAAAAAAAAA"
+  }
+}
+{{end}}

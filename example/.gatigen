@@ -1,0 +1,3 @@
+directoryImages: ./src/images
+directoryComponents: ./src/components/Image
+snipPath: src/images/
